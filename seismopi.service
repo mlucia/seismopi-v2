@@ -1,0 +1,14 @@
+[Unit]
+Description=My Application Instance
+After=network.target
+
+[Service]
+Type=exec
+User=mlucia
+WorkingDirectory=/home/mlucia/seismopi-v2/
+ExecStart=/usr/bin/python3 /home/mlucia/seismopi-v2/seismopi-v2.pi Restart=always
+RestartSec=5
+UMask=0000
+
+[Install]
+WantedBy=multi-user.target
